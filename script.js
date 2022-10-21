@@ -40,7 +40,45 @@ const restaurant = {
         console.log(mainIngredient, otherIngredient)
     }
 };
+///Logical Assignment Operators
+ const rest1 ={
+    name:"John",
+    // numGuests: 20,
+    numGuests: 0,
+ };
 
+ const rest2 ={
+    name: 'la Piazza',
+    owner: 'Giovanni Rossi',
+ };
+// rest1.numGuests = rest1.numGuests || 10;
+// rest2.numGuests = rest2.numGuests || 10;
+//console.log(rest1, rest2);
+//OR assignment operator
+// rest1.numGuests ||=10;
+// rest2.numGuests ||=10;
+
+//Nullish assignment operator (null or undefind)
+// rest1.numGuests ??= 10;
+// rest2.numGuests ??= 10;
+
+//AND assignment operator
+// rest1.owner = rest1.owner && '<ANONYMOUS'
+// rest2.owner = rest2.owner && '<ANONYMOUS'
+rest1.owner &&= '<ANONYMOUS'
+rest2.owner &&= '<ANONYMOUS'
+console.log(rest1, rest2);
+
+
+////////////// Nullish Coalescing operator(__)
+// restaurant.numGuests =0;  
+// const guests =restaurant.numGuests || 10;
+// console.log(guests);
+
+//Nullish: null and undefind (NOT 0 or '')
+// const guestCorrect =restaurant.numGuests ?? 10;
+// console.log(guestCorrect);
+ 
 ///////////////
 // Short Circuiting && ||
  //use any data type, return any data type, short-circuiting
