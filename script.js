@@ -46,6 +46,40 @@ const restaurant = {
         console.log(mainIngredient, otherIngredient)
     }
 };
+//////////////////////////////////////////////////////////
+//Set : set is the collection of unique values. That means set can never have deplicate values 
+const orderSet =new Set([
+    'Pasta',
+    'Pizza',
+    'Risotto',
+    'Pasta',
+    'Pizza',
+]);
+console.log(orderSet);
+
+console.log(new Set(['Jho']))
+console.log(orderSet.size);
+//check 
+console.log(orderSet.has('Bread'));
+orderSet.add('Garlic Bread');
+orderSet.add('Garlic Bread');
+orderSet.delete('Risotto');
+//orderSet.clear();
+console.log(orderSet);
+for(const order of orderSet) console.log(order); 
+//Examples
+const staff =['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef','Waiter'];
+const staffUnique =[...new Set(staff)];
+console.log(staffUnique)
+console.log(
+    new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef','Waiter']).size
+);
+
+console.log(new Set('Jonasnndnddfgdfh').size);
+
+ 
+
+
 
 /////////////////////
 //Coding challenge #2
@@ -117,35 +151,32 @@ game, it will look like this:
 }
  */
 
-//1.
-for(const [i, player] of game.scored.entries()){
-     console.log(`Goal ${i+1} : ${player}`);
-}
-//2.
+// //1.
+// for(const [i, player] of game.scored.entries()){
+//      console.log(`Goal ${i+1} : ${player}`);
+// }
+// //2.
 
- let avg =0;
- const odds =Object.values(game.odds);
-for(const x of odds){
-    avg += x;
-}
-avg /= odds.length;
-console.log(avg);
+//  let avg =0;
+//  const odds =Object.values(game.odds);
+// for(const x of odds){
+//     avg += x;
+// }
+// avg /= odds.length;
+// console.log(avg);
 
-//3. Odd of victory Bayern Munich: 1.33
-
-
-for (const [team, odd] of Object.entries(game.odds)){
-    const teamStr =team ==='x' ? 'draw' :`victory ${game[team]}`;
-console.log(`Odd of ${teamStr} ${odd}`);
-}
-
-//4.
- let scorers ={
-    name: '',
- };
+// //3. Odd of victory Bayern Munich: 1.33
 
 
+// for (const [team, odd] of Object.entries(game.odds)){
+//     const teamStr =team ==='x' ? 'draw' :`victory ${game[team]}`;
+// console.log(`Odd of ${teamStr} ${odd}`);
+// }
 
+// //4.
+//  let scorers ={
+//     name: '',
+//  };
 
 
 
