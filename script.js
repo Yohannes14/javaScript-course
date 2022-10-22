@@ -46,36 +46,69 @@ const restaurant = {
         console.log(mainIngredient, otherIngredient)
     }
 };
+
+//////////////////////////////////////////////////////////
+//Maps Fundamentals
+const rest =new Map();
+rest.set('name', 'Classico Itaiano');
+rest.set(1, 'Firenze, Italy');
+console.log(rest.set(2, 'Lisbon, portugal'));
+
+rest.set('categories', ['Itslian', 'pizzeria', 'vegetarian', 'organic'])
+     .set('open', 11)
+     .set('close', 23)
+     .set('true', 'We are open:D')
+     .set('false', 'We are closed : (');
+// console.log(rest); 
+
+console.log(rest.get('name'));
+console.log(rest.get('true'));
+console.log(rest.get(1));
+
+console.log(rest.has('categories'));
+rest.delete(2);
+const arr =[1, 2];
+rest.set(arr, 'Test');
+rest.set(document.querySelector('h1', 'heading'))
+console.log(rest)
+// rest.clear();
+console.log(rest.size);
+
+console.log(rest.get(arr));
+
+
+
+
 //////////////////////////////////////////////////////////
 //Set : set is the collection of unique values. That means set can never have deplicate values 
-const orderSet =new Set([
-    'Pasta',
-    'Pizza',
-    'Risotto',
-    'Pasta',
-    'Pizza',
-]);
-console.log(orderSet);
+// const orderSet =new Set([
+//     'Pasta',
+//     'Pizza',
+//     'Risotto',
+//     'Pasta',
+//     'Pizza',
+// ]);
+// console.log(orderSet);
 
-console.log(new Set(['Jho']))
-console.log(orderSet.size);
-//check 
-console.log(orderSet.has('Bread'));
-orderSet.add('Garlic Bread');
-orderSet.add('Garlic Bread');
-orderSet.delete('Risotto');
-//orderSet.clear();
-console.log(orderSet);
-for(const order of orderSet) console.log(order); 
-//Examples
-const staff =['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef','Waiter'];
-const staffUnique =[...new Set(staff)];
-console.log(staffUnique)
-console.log(
-    new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef','Waiter']).size
-);
+// console.log(new Set(['Jho']))
+// console.log(orderSet.size);
+// //check 
+// console.log(orderSet.has('Bread'));
+// orderSet.add('Garlic Bread');
+// orderSet.add('Garlic Bread');
+// orderSet.delete('Risotto');
+// //orderSet.clear();
+// console.log(orderSet);
+// for(const order of orderSet) console.log(order); 
+// //Examples
+// const staff =['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef','Waiter'];
+// const staffUnique =[...new Set(staff)];
+// console.log(staffUnique)
+// console.log(
+//     new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef','Waiter']).size
+// );
 
-console.log(new Set('Jonasnndnddfgdfh').size);
+// console.log(new Set('Jonasnndnddfgdfh').size);
 
  
 
