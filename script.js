@@ -1,45 +1,52 @@
+
+const weakdays =['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+const openingHours = {
+    [weakdays[3]]:{
+        open: 12,
+        close: 22,
+    },
+    [weakdays[4]]: {
+        open :12,
+        close:23,
+    },
+    sat: {
+        open :0,
+        close:24,
+    },
+};
 const restaurant = {
     name: 'Classico Italiano',
     location: 'Via Angelo Tavanti 23, Firenze, Italy',
     categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
     starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
     mainMenu: ['Pizza', 'Pasta', 'Risotto'],
-    openingHours: {
-        thu:{
-            open: 12,
-            close: 22,
-        },
-        fri: {
-            open :12,
-            close:23,
-        },
-        sat: {
-            open :0,
-            close:24,
-        },
-    },
-    order: function(starterIndex, mainIndex){
-        return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
 
+    //ES6 enhanced Object Literals
+    openingHours,
+  
+    order(starterIndex, mainIndex){
+        return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+ 
     },
     // orderDelivery: function(obj){
     //     console.log(obj);
     // },
-    orderDelivery: function({starterIndex, mainIndex, time, address} ){
+    orderDelivery({starterIndex, mainIndex, time, address} ){
         console.log(
             `Order received! ${this.starterMenu[starterIndex]}
                and ${this.mainMenu[mainIndex]}
                will be delivered to ${address} at ${time}`
         );
     },
-    orderPasta: function(ing1, ing2, ing3) {
+    orderPasta(ing1, ing2, ing3) {
         console.log(`here is your declious pasta with ${ing1}, ${ing2} and ${ing3}`)
     },
 
-    orderPizza:function(mainIngredient, ...otherIngredient){
+    orderPizza(mainIngredient, ...otherIngredient){
         console.log(mainIngredient, otherIngredient)
     }
 };
+
 
 /// Looping Array
 
@@ -80,71 +87,71 @@ const restaurant = {
      'Lewandowski' and 'Kimmich'. Then, call the function again with players from game.scored
    */
 
-     const game = {
-        team1: 'Bayern Munich',
-        team2: 'Borrussia Dortmund',
-        players: [
-        [
-        'Neuer',
-        'Pavard',
-        'Martinez',
-        'Alaba',
-        'Davies',
-        'Kimmich',
-        'Goretzka',
-        'Coman',
-        'Muller',
-        'Gnarby',
-        'Lewandowski',
-        ],
-        [
-        'Burki',
-        'Schulz',
-        'Hummels',
-        'Akanji',
-        'Hakimi',
-        'Weigl',
-        'Witsel',
-        'Hazard',
-        'Brandt',
-        'Sancho',
-        'Gotze',
-        ],
-        ],
-        score: '4:0',
-        scored: ['Lewandowski', 'Gnarby', 'Lewandowski',
-        'Hummels'],
-        date: 'Nov 9th, 2037',
-        odds: {
-        team1: 1.33,
-        x: 3.25,
-        team2: 6.5,
-        },
-        };
-//1
-const [player1,player2] = game.players;
-//2
-const [gk, ...fieldPlayers] = player1;
-//3
-const allPlayers= [...player1, ...player2];
-//4
-const playersFinal =[...player1, 'Thiago', 'Coutinho' ,'Perisit'];
-//5
+//      const game = {
+//         team1: 'Bayern Munich',
+//         team2: 'Borrussia Dortmund',
+//         players: [
+//         [
+//         'Neuer',
+//         'Pavard',
+//         'Martinez',
+//         'Alaba',
+//         'Davies',
+//         'Kimmich',
+//         'Goretzka',
+//         'Coman',
+//         'Muller',
+//         'Gnarby',
+//         'Lewandowski',
+//         ],
+//         [
+//         'Burki',
+//         'Schulz',
+//         'Hummels',
+//         'Akanji',
+//         'Hakimi',
+//         'Weigl',
+//         'Witsel',
+//         'Hazard',
+//         'Brandt',
+//         'Sancho',
+//         'Gotze',
+//         ],
+//         ],
+//         score: '4:0',
+//         scored: ['Lewandowski', 'Gnarby', 'Lewandowski',
+//         'Hummels'],
+//         date: 'Nov 9th, 2037',
+//         odds: {
+//         team1: 1.33,
+//         x: 3.25,
+//         team2: 6.5,
+//         },
+//         };
+// //1
+// const [player1,player2] = game.players;
+// //2
+// const [gk, ...fieldPlayers] = player1;
+// //3
+// const allPlayers= [...player1, ...player2];
+// //4
+// const playersFinal =[...player1, 'Thiago', 'Coutinho' ,'Perisit'];
+// //5
 
-const {odds:{team1, x:draw, team2}} =game;
-console.log(team1, draw, team2)
+// const {odds:{team1, x:draw, team2}} =game;
+// console.log(team1, draw, team2)
 
-//6
+// //6
 
-const printGoals =function(...player){
-     console.log(`${player.length} were scored`)
-}
+// const printGoals =function(...player){
+//      console.log(`${player.length} were scored`)
+// }
  
-printGoals(...game.scored);  
+// printGoals(...game.scored);  
 
-//7
- team1 <team2 && console.log('Team 1 is more likely to win');
- team2 <team1 && console.log('Team 2 is more likely to win');
+// //7
+//  team1 <team2 && console.log('Team 1 is more likely to win');
+//  team2 <team1 && console.log('Team 2 is more likely to win');
 
 
 /////////////////////////////////
